@@ -11,8 +11,8 @@ PVOID getProcessParamsAddr()
         "mov rbx, gs:[rax] \n"    // RBX = PEB Address
         "mov rax, [rbx+0x20] \n"  // RAX = ProcessParameters Address
         "mov %[procParamAddr], rax \n"
-		:[procParamAddr] "=r" (procParamAddr)
-	);
+	:[procParamAddr] "=r" (procParamAddr)
+    );
     return procParamAddr;
 }
 
@@ -23,9 +23,9 @@ PVOID getEnvironmentAddr(PVOID procParamAddr)
         "mov rax, %[procParamAddr] \n"
         "mov rbx, [rax+0x80] \n"  // RBX = Environment Address
         "mov %[environmentAddr], rbx \n"
-		:[environmentAddr] "=r" (environmentAddr)
-		:[procParamAddr] "r" (procParamAddr)
-	);
+	:[environmentAddr] "=r" (environmentAddr)
+	:[procParamAddr] "r" (procParamAddr)
+    );
     return environmentAddr;
 }
 
@@ -37,7 +37,8 @@ PVOID getEnvironmentSize(PVOID procParamAddr)
         "mov rax, [rax+0x3f0] \n" // RAX = Environment Siz
         "mov %[environmentSize], rax \n"
         : [environmentSize] "=r"(environmentSize)
-        : [procParamAddr] "r"(procParamAddr));
+        : [procParamAddr] "r"(procParamAddr)
+    );
     return environmentSize;
 }
 
@@ -56,9 +57,9 @@ PVOID getUnicodeStrLen(PVOID envStrAddr)
         "cmp bl, [rax + rcx] \n"
         "jne check \n"
         "mov %[unicodeStrLen], rcx \n"
-		:[unicodeStrLen] "=r" (unicodeStrLen)
-		:[envStrAddr] "r" (envStrAddr)
-	);
+	:[unicodeStrLen] "=r" (unicodeStrLen)
+	:[envStrAddr] "r" (envStrAddr)
+    );
     return unicodeStrLen;
 }
 
