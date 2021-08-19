@@ -1,0 +1,15 @@
+beacon_command_register(
+    "whereami", 
+    "Displays the beacon process environment without any DLL usage.", 
+    "Synopsis: whereami"
+);
+
+alias whereami {
+    local('$handle $data');
+    $handle = openf(script_resource("whereami.x64.o"));
+    $data = readb($handle, -1);
+    closef($handle);
+
+    btask($1, "Where Am I? BOF (Bobby Cooke//SpiderLabs|@0xBoku|github.com/boku7)");
+    beacon_inline_execute($1, $data, "go");
+}
