@@ -7,3 +7,6 @@ See my [Creating the "Where Am I" Cobalt Strike BOF](https://0xboku.com/2021/08/
 
 ### BOF Flow to get the Environment Variables Dynamically in Memory
 TEB (GS Register) --> PEB --> ProcessParameters --> Environment
+
+![](/images/bangPEB.png)
+
