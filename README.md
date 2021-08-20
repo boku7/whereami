@@ -40,6 +40,7 @@ TEB at 00000000002ae000
    +0x3f0 EnvironmentSize  : 0x124e
 ```
 
+## Using WinDBG to Parse the PEB and View Environment Strings
 ![](/images/bangPeb.png)
 
 + We can see that `!peb` command parses out the PEB structure and displays to us the Loader (Ldr) information, the address & resolved strings of the ProcessParameters struct, as well as the Environment information we are targeting.
