@@ -15,6 +15,9 @@ Since the goal was to make it ninja/OPSEC safe, I figured why not just do it dyn
 This is the walkthrough blog post on how I created this Cobalt Strike Beacon Object File from start to finish:
 + [Creating the WhereAmI Cobalt Strike BOF](https://0xboku.com/2021/08/19/Bof-WhereAmI.html) 
 
+I discovered that TrustedSec had already created a BOF for this, and of course they did because they are awesome! If you'd like to view their original work you can find it here: [trustedsec/CS-Situational-Awareness-BOF/env](https://github.com/trustedsec/CS-Situational-Awareness-BOF/blob/master/src/SA/env/entry.c)
+
+## Using the WhereAmI BOF from the Cobalt Strike Console
 ![](/images/beaconLoop.png)
 
 ![](/images/greatSuccess.png)
