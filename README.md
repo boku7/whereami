@@ -8,7 +8,9 @@ This idea was inspired by Matt Eidelberg's DEF CON 29 talk [Operation Bypass Cat
 + I've been doing allot of Windows Internals studying, and this video made a lightbulb go off. 
 + I thought "Why not just get the `whoami.exe` info from the process? It's already right there in the beacon processes memory!" 
 
-So that's what I did! I created a Beacon Object File that grabs the information we'd want, right there form the beacon process memory! Since the goal was to make it ninja/OPSEC safe, I figured why not just do it dynamically with Assembly? About halfway through creation, I bit the bullet and burned the extra time to make it into a blog post as well, so here it all is!
+So that's what I did! I created a Beacon Object File that grabs the information we'd want, right there from the beacon process memory! 
+
+Since the goal was to make it ninja/OPSEC safe, I figured why not just do it dynamically with Assembly? About halfway through creation, I bit the bullet and burned the extra time to make it into a blog post as well, so here it all is!
 
 This is the walkthrough blog post on how I created this Cobalt Strike Beacon Object File from start to finish:
 + [Creating the WhereAmI Cobalt Strike BOF](https://0xboku.com/2021/08/19/Bof-WhereAmI.html) 
