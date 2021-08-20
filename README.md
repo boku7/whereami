@@ -1,5 +1,5 @@
 ## Cobalt Strike "Where Am I?" Beacon Object File
-Cobalt Strike Beacon Object File (BOF) that uses handwritten shellcode to returns the Process Environment strings without touching any DLL's.
+Cobalt Strike Beacon Object File (BOF) that uses handwritten shellcode to return the process Environment strings without touching any DLL's.
 
 This idea was inspired by Matt Eidelberg's DEF CON 29 talk [Operation Bypass Catch My Payload If You Can](https://youtu.be/JXKNdWUs77w).
 + In this talk, Matt shows how EDR heuristics can detect Cobalt Strike beacons based on their behavior. 
