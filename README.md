@@ -55,7 +55,7 @@ x86_64-w64-mingw32-gcc -c whereami.x64.c -o whereami.x64.o -masm=intel
 
 ## References/Resources
 + Matt Eidelberg's DEF CON 29 talk [Operation Bypass Catch My Payload If You Can](https://youtu.be/JXKNdWUs77w)
-##### Sektor7 Courses
+##### Sektor7 Courses - Conquer Malware Dev (best courses ever)
 + https://institute.sektor7.net/
 ##### Raphael Mudge - Beacon Object Files - Luser Demo
 + https://www.youtube.com/watch?v=gfYswA_Ronw
@@ -68,11 +68,11 @@ x86_64-w64-mingw32-gcc -c whereami.x64.c -o whereami.x64.o -masm=intel
 + https://github.com/anthemtotheego/InlineExecute-Assembly/blob/main/inlineExecuteAssembly/inlineExecute-Assembly.cna
 ###### ajpc500/BOFs
 + https://github.com/ajpc500/BOFs/
-###### Implementing ASM in C Code with GCC
+##### Implementing ASM in C Code with GCC
 + https://outflank.nl/blog/2020/12/26/direct-syscalls-in-beacon-object-files/
 + https://www.cs.uaf.edu/2011/fall/cs301/lecture/10_12_asm_c.html
 + http://gcc.gnu.org/onlinedocs/gcc-4.0.2/gcc/Extended-Asm.html#Extended-Asm
-###### Learn Assembly
+##### Learn Assembly
 + Pentester Academy - [x86_64 Assembly Language and Shellcoding on Linux](https://www.pentesteracademy.com/course?id=7)
 + Offensive Security - [Windows User Mode Exploit Development](https://www.offensive-security.com/exp301-osed/)
  
