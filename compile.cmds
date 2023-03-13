@@ -1,1 +1,0 @@
-x86_64-w64-mingw32-gcc -c whereami.x64.c -o whereami.x64.o -masm=intel
