@@ -1,7 +1,7 @@
 beacon_command_register(
     "whereami", 
     "Displays the beacon process environment without any DLL usage.", 
-    "Synopsis: whereami"
+    "Synopsis: Li stenvironment variables from process PEB."
 );
 
 alias whereami {
@@ -10,6 +10,7 @@ alias whereami {
     $data = readb($handle, -1);
     closef($handle);
 
-    btask($1, "Where Am I? BOF (Bobby Cooke//SpiderLabs|@0xBoku|github.com/boku7)");
+    btask($1, ")++[=======> WhereAmI BOF - Bobby Cooke @0xBoku github.com/boku7");
+    btask($1, "[+] Listing environment variables from the process PEB..");
     beacon_inline_execute($1, $data, "go");
 }

