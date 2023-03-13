@@ -72,7 +72,7 @@ void printLoopAllTheStrings(PVOID nextEnvStringAddr, unsigned __int64 environmen
     PVOID environmentEndAddr = nextEnvStringAddr + environmentSize;
     while (nextEnvStringAddr < environmentEndAddr)
     {
-        BeaconFormatPrintf(&stringFormatObject,"%ls\n",nextEnvStringAddr);
+        BeaconFormatPrintf(&stringFormatObject,"%ls\r\n",nextEnvStringAddr);
         //BeaconPrintf(CALLBACK_OUTPUT, "%ls",nextEnvStringAddr);
         unicodeStrSize = getUnicodeStrLen(nextEnvStringAddr)+2;
         nextEnvStringAddr += (unsigned __int64)unicodeStrSize;
