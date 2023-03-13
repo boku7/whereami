@@ -90,11 +90,17 @@ void go(char *args, int len)
     PVOID environmentAddr = NULL;
     PVOID environmentSize = NULL;
     procParamAddr = getProcessParamsAddr();
-    environmentAddr = getEnvironmentAddr(procParamAddr);
-    environmentSize = getEnvironmentSize(procParamAddr);
+    if (procParamAddr != NULL){
+        environmentAddr = getEnvironmentAddr(procParamAddr);
+        environmentSize = getEnvironmentSize(procParamAddr);
+        if (environmentAddr != NULL){
+            if (environmentSize != NULL){
 #ifdef DEBUG_BOF
-    BeaconPrintf(CALLBACK_OUTPUT, "[+] Evironment Address: %p",environmentAddr); 
-    BeaconPrintf(CALLBACK_OUTPUT, "[+] Evironment Size:    %d",environmentSize);
+                BeaconPrintf(CALLBACK_OUTPUT, "[+] Evironment Address: %p",environmentAddr); 
+                BeaconPrintf(CALLBACK_OUTPUT, "[+] Evironment Size:    %d",environmentSize);
 #endif
-    printLoopAllTheStrings(environmentAddr, (unsigned __int64)environmentSize);
+                printLoopAllTheStrings(environmentAddr, (unsigned __int64)environmentSize);
+            }
+        }
+    }
 }
