@@ -50,7 +50,8 @@ TEB at 00000000002ae000
 
 ## Compile
 ```bash
-x86_64-w64-mingw32-gcc -c whereami.x64.c -o whereami.x64.o -masm=intel
+cd ./whereami/
+make
 ```
 
 ## References/Resources
